@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- <title>BizeeBee</title> -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">    
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+</head>
+<body>
+	<script type="text/x-handlebars">
+	  <div class="navbar">
+		  	  <div class="navbar-inner">
+				  <a class="brand" href="#">BizeeBee</a>
+				  <ul class="nav nav-pills">					  
+					  <li>
+						  {{#link-to "bizeebee.index" class="active"}}All{{/link-to}}
+					  </li>
+					  <li>						  
+						  {{#link-to "bizeebee.instructor"}}Instructors{{/link-to}}
+					  </li>
+					  <li>
+					    <a href="student">Students</a>
+					  </li>
+				  </ul>
+			  </div>
+		  </div>					  
+	  </div>	  
+	  {{outlet}}
+	</script>
+	
+	<script type="text/x-handlebars" data-template-name="bizeebee/index">
+		<section id="bizeebeeapp">
+	      <section id="main">        
+		  <ul id="instructor-list">		    
+			  {{#each}}
+		      <li>
+		        <label>{{first_name}}</label>
+		      </li>		    
+			  {{/each}}
+		 </ul>		  
+		 </section>		 	     
+		</section>    
+	</script>
+	
+	<script type="text/x-handlebars" data-template-name="bizeebee/instructor">
+		<label>Add a new instructor</label>
+	 	<!-- {{input type="text" id="new-instructor" placeholder="Add a new instructor"
+	              value=newFirstName action="createInstructor"}} -->
+
+	</script>
+	 	
+	<script src="js/libs/jquery-1.10.2.js"></script>
+	<script src="js/libs/handlebars-1.1.2.js"></script>
+	<script src="js/libs/ember-1.5.1.js"></script>
+	<script src="js/libs/ember-data.js"></script>
+	<script src="js/application.js"></script>
+	<script src="js/router.js"></script>	
+	<script src="js/models/instructor.js"></script>
+    <script src="js/controllers/bizeebee_controller.js"></script>
+</body>
+  
+</html>
